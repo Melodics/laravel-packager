@@ -125,6 +125,10 @@ class NewPackage extends Command
             ':lc:package',
             ':kc:vendor',
             ':kc:package',
+            ':cc:vendor',
+            ':cc:package',
+            ':sc:vendor',
+            ':sc:package',
         ], [
             $this->conveyor->vendorStudly(),
             $this->conveyor->packageStudly(),
@@ -132,6 +136,10 @@ class NewPackage extends Command
             strtolower($this->conveyor->package()),
             $this->conveyor->vendorKebab(),
             $this->conveyor->packageKebab(),
+            $this->conveyor->vendorCamel(),
+            $this->conveyor->packageCamel(),
+            $this->conveyor->vendorSnake(),
+            $this->conveyor->packageSnake(),
         ]);
 
         if ($this->option('i')) {

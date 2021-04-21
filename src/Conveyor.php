@@ -43,6 +43,26 @@ class Conveyor
     }
 
     /**
+     * Get the vendor name converted to camelCase.
+     *
+     * @return string|RuntimeException
+     */
+    public function vendorCamel()
+    {
+        return Str::camel($this->vendor());
+    }
+
+    /**
+     * Get the vendor name converted to snake_case.
+     *
+     * @return string|RuntimeException
+     */
+    public function vendorSnake()
+    {
+        return Str::snake($this->vendor());
+    }
+
+    /**
      * Get the vendor name converted to StudlyCase.
      *
      * @return string|RuntimeException
@@ -79,6 +99,26 @@ class Conveyor
         }
 
         return $this->package;
+    }
+
+    /**
+     * Get the package name converted to camelCase.
+     *
+     * @return string|RuntimeException
+     */
+    public function packageCamel()
+    {
+        return Str::camel($this->package());
+    }
+
+    /**
+     * Get the package name converted to snake_case.
+     *
+     * @return string|RuntimeException
+     */
+    public function packageSnake()
+    {
+        return Str::snake($this->package());
     }
 
     /**
