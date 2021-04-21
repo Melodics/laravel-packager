@@ -170,8 +170,26 @@ trait FileHandler
     public function renameFiles($manifest = null)
     {
         $bindings = [
-            ['MyVendor', 'MyPackage', 'myvendor', 'mypackage'],
-            [$this->vendorStudly(), $this->packageStudly(), strtolower($this->vendor()), strtolower($this->package())],
+            [
+                'MyVendor',
+                'MyPackage',
+                'myvendor',
+                'mypackage',
+                'my_vendor',
+                'my_package',
+                'myVendor',
+                'myPackage'
+            ],
+            [
+                $this->vendorStudly(),
+                $this->packageStudly(),
+                strtolower($this->vendor()),
+                strtolower($this->package()),
+                $this->vendorSnake(),
+                $this->packageSnake(),
+                $this->vendorCamel(),
+                $this->packageCamel(),
+            ],
         ];
 
         $files = new RecursiveDirectoryIterator($this->packagePath());
